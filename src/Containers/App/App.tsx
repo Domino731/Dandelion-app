@@ -1,4 +1,8 @@
-import '../../App.css'
+import Sidebar from './Sidebar/index';
+import './App.css'
+import Chat from './Chat/index';
+
+
 // import {Button, ThemeProvider} from "@mui/material";
 // import {Theme} from "../../styles";
 // import {Provider} from 'react-redux';
@@ -6,13 +10,12 @@ import '../../App.css'
 
 function App() {
     return (
-        <div className='App'>
-            <h1>Lets build a DISCORD clone</h1>
+    <div className='app'>
 
-        {/* Sidebar */}
+        <Sidebar />
 
-        {/* Chat */}
-        </div>
+        <Chat />
+    </div>
     );
 }
 

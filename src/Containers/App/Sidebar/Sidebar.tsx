@@ -4,6 +4,12 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AddIcon from '@mui/icons-material/Add';
 import SidebarChannel from './SidebarChannel';
 import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import CallIcon from '@mui/icons-material/Call';
+import { Avatar } from '@mui/material';
+import MicIcon from '@mui/icons-material/Mic';
+import HeadsetIcon from '@mui/icons-material/Headset';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 function Sidebar() {
   return (
@@ -37,6 +43,24 @@ function Sidebar() {
         <div className="sidebar__voiceInfo">
           <h3>Voice Connected</h3>
           <p>Stream</p>
+        </div>
+        <div className="sidebar__voiceIcons">
+          <InfoOutlinedIcon />
+          <CallIcon />
+        </div>
+      </div>
+
+      <div className="sidebar__profile">
+        <Avatar /> {/* W awatarze mozesz dodać "src=" i dac zmienną w któej dasz url zdjęcia */}
+        <div className="sidebar__profileInfo">
+          <h3>Choinsky</h3>
+          <p>#thisIsMyID</p>
+        </div>
+
+        <div className="sidebar__profileIcons">
+          <MicIcon />
+          <HeadsetIcon />
+          <SettingsIcon />
         </div>
       </div>
     </div>
