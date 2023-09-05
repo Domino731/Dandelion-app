@@ -25,6 +25,10 @@
   justify-content: space-between;
 }
 
+.chat__messages {
+  flex: 1;
+}
+
 .chatHeader__right > .MuiSvgIcon-root {
   padding: 5px;
   cursor: pointer;

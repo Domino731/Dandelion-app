@@ -1,12 +1,14 @@
 // store/store.ts
 import {configureStore} from '@reduxjs/toolkit';
-import {AUTH_SLICE_NAME, authReducer} from "./auth/slice.ts";
+import { userReducer } from "./userSlice.ts";
+import { appReducer } from './appSlice.ts';
 // Import your reducers here
 // import counterReducer from './counterReducer';
 
 const store = configureStore({
     reducer: {
-        [AUTH_SLICE_NAME]: authReducer
+        user: userReducer,
+        app: appReducer,
     },
 });
 

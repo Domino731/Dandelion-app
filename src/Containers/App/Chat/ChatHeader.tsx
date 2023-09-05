@@ -10,7 +10,6 @@ import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
 function ChatHeader() {
   return (
     <div className="chatHeader">
-      <h3>I am the header</h3>
       <div className="chatHeader__left">
         <h3>
           <span className="chatHeader__hash">
