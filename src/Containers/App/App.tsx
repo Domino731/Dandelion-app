@@ -4,7 +4,6 @@ import './App.css'
 import Chat from './Chat/index';
 import { selectUser } from '../../redux/userSlice.ts';
 import { useSelector, useDispatch  } from 'react-redux';
-import store from "../../redux/store.ts";
 import Login from './Login/Login.tsx';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../firebase.ts';
@@ -27,9 +26,10 @@ function App() {
             }))
         } else {
             //the user is log out
+            dispatch(logout());
         }
        }) 
-    }, [])
+    }, [dispatch])
 
     return (
     <div className='app'>
