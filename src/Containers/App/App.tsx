@@ -9,6 +9,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../firebase.ts';
 import { login, logout } from '../../redux/userSlice.ts';
 
+
 function App() {
     const dispatch = useDispatch();
     const user = useSelector(selectUser);

@@ -25,7 +25,7 @@ interface Channel {
 }
 
 
-function Sidebar(props: Channel) {
+function Sidebar() {
   const user = useSelector(selectUser);
   const [channels, setChannels] = useState<Channel[]>([]);
   // useEffect(() => {

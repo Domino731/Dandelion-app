@@ -7,7 +7,9 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
 
-function ChatHeader() {
+
+
+function ChatHeader(props: { channelName: string }) {
   return (
     <div className="chatHeader">
       <div className="chatHeader__left">
@@ -15,7 +17,7 @@ function ChatHeader() {
           <span className="chatHeader__hash">
             #
           </span>
-          Test Channel Name
+          {props.channelName}
         </h3>
       </div>
       <div className="chatHeader__right">

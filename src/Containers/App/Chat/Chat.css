@@ -40,3 +40,15 @@
   padding: 5px;
 }
 
+.chat__messages{
+  overflow: scroll;
+}
+
+.chat__messages::-webkit-scrollbar {
+  display: none;
+}
+
+.chat_messages {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
