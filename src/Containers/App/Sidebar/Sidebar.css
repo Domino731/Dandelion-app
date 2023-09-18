@@ -1,9 +1,9 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  flex: 0.25;
+  flex: 0.20;
   height: 100vh;
-  background-color: rgb(43, 45, 49);
+  background-color: #13171D;
   margin: 0;
 }
 
@@ -12,9 +12,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: black;
+  background-color: #13171D;
   color: white;
-  border-bottom: 3px solid blueviolet;
+  border-bottom: 3px solid #2c3441;
 }
 
 .sidebar__channels {
@@ -34,8 +34,18 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: black;
-  color: grey;
+  background-color: #13171D;
+  color: rgb(168, 166, 166);
+}
+
+.sidebar__channels::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar__channels {
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .sidebar__header {
@@ -48,10 +58,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: gray;
-  background-color: black;
+  color: rgb(168, 166, 166);
+  background-color: #13171D;
   padding: 10px;
-  border-top: 1px solid gray;
+  border-top: 1px solid rgb(168, 166, 166);
 }
 
 .sidebar__voiceInfo {

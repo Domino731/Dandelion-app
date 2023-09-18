@@ -1,9 +1,10 @@
 .chat {
   display: flex;
   flex-direction: column;
-  flex: 0.75;
-  background-color: rgb(37, 39, 59);
+  flex: 0.80;
+  background-color: #20262f;
   height: 100vh;
+  
 }
 
 .chat__input {
@@ -15,7 +16,7 @@
   border-radius: 5px;
   margin: 20px;
   border-top: 1px solid gray;
-  background-color: rgb(126, 127, 182);
+  background-color: #2c3441;
 }
 
 .chat__input > form > input {
@@ -36,8 +37,12 @@
   display: none;
 }
 
+.chat__input > .MuiSvgIcon-root{
+  padding: 10px;
+}
+
 .chat__inputIcons > .MuiSvgIcon-root{
-  padding: 5px;
+  padding: 10px;
 }
 
 .chat__messages{
