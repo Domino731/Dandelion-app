@@ -1,4 +1,4 @@
-import {ChangeEvent, FocusEventHandler} from "react";
+import {ChangeEvent, FocusEventHandler, InputHTMLAttributes} from "react";
 
 export type InputProps = {
     name: string;
@@ -8,4 +8,5 @@ export type InputProps = {
     label: string;
     fullWidth?: boolean;
     error?: string;
+    type?: InputHTMLAttributes<unknown>['type'];
 }

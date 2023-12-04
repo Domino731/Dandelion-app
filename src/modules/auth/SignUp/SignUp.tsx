@@ -19,12 +19,12 @@ export const SignUp = () => {
                 spacing="16px"
                 sx={signUpStyles.container}
             >
-                {/*<Typography variant="h3" gutterBottom>Create a new account</Typography>*/}
+                <Typography variant="h3" gutterBottom>Create a new account</Typography>
                 <FormikInput name="email" label="E-mail address"/>
-                {/*<FormikInput name="nick" label="Nick"/>*/}
-                {/*<FormikInput name="password" label="Password"/>*/}
-                {/*<FormikInput name="passwordRepeat" label="Repeat the password"/>*/}
-                {/*<Button text="Sign up" type="submit" onClick={() => handleSubmit()}/>*/}
+                <FormikInput name="nick" label="Nick"/>
+                <FormikInput name="password" label="Password" type="password"/>
+                <FormikInput name="passwordRepeat" label="Repeat the password" type="password"/>
+                <Button text="Sign up" type="submit" onClick={() => handleSubmit()}/>
             </Stack>}
         </Formik>
     </>
