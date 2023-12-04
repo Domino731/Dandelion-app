@@ -12,5 +12,5 @@ export const FormikValidationSchema = object({
         ),
     passwordRepeat: string()
         .required('Required field')
-        .oneOf([ref('password'), null], 'Passwords must match'),
+        .oneOf([ref('password')], 'Passwords must match'),
 });

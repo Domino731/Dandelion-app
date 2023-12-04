@@ -5,4 +5,6 @@ export type ButtonProps = {
     fullWidth?: boolean;
     type?: "button" | "submit" | "reset";
     onClick: MouseEventHandler<HTMLButtonElement>;
+    isDisabled?: boolean;
+    title?: string;
 }
