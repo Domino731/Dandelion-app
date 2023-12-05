@@ -6,6 +6,7 @@ import {ActionTypeUnion} from "../../../redux/constants.ts";
 const initialState: AuthSliceState = {
     isLogged: false,
     registerStatus: "IDLE",
+    registerError: null,
     loginStatus: "IDLE"
 };
 
@@ -24,6 +25,9 @@ const authSlice = createSlice({
         },
         setLoginStatus: (state, action: PayloadAction<ActionTypeUnion>) => {
             state.loginStatus = action.payload;
+        },
+        setRegisterError: (state, action: PayloadAction<string | null>) => {
+            state.registerError = action.payload;
         }
     },
 });
