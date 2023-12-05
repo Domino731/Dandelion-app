@@ -1,11 +1,12 @@
 // store/counterReducer.ts
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {AuthSliceState} from "./types.ts";
+import {ActionTypeUnion} from "../../../redux/constants.ts";
 
 const initialState: AuthSliceState = {
     isLogged: false,
-    signUpErrorText: null,
-    signUpIsLoading: false
+    registerStatus: "IDLE",
+    loginStatus: "IDLE"
 };
 
 export const AUTH_SLICE_NAME = 'auth';
@@ -18,11 +19,11 @@ const authSlice = createSlice({
         changeIsLogged: state => {
             state.isLogged = true;
         },
-        changeChangeUpIsLoading: (state, action: PayloadAction<boolean>) => {
-            state.signUpIsLoading = action.payload;
+        setRegisterStatus: (state, action: PayloadAction<ActionTypeUnion>) => {
+            state.registerStatus = action.payload;
         },
-        changeChangeUpErrorText: (state, action: PayloadAction<string | null>) => {
-            state.signUpErrorText = action.payload;
+        setLoginStatus: (state, action: PayloadAction<ActionTypeUnion>) => {
+            state.loginStatus = action.payload;
         }
     },
 });

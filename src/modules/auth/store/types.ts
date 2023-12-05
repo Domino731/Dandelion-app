@@ -1,5 +1,7 @@
+import {ActionTypeUnion} from "../../../redux/constants.ts";
+
 export type AuthSliceState = {
     isLogged: boolean;
-    signUpIsLoading: boolean;
-    signUpErrorText: null | string;
+    registerStatus: ActionTypeUnion;
+    loginStatus: ActionTypeUnion;
 }
