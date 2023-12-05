@@ -16,31 +16,29 @@ export const SignUp = () => {
 
     const signUpIsLoading = useSelector(authSelectors.signUpIsLoading);
 
-    const handleSignUp = useCallback((values: FormikValues) => {
+    const handleSignUp = useCallback(({passwordRepeat, ...results}: FormikValues) => {
         if (signUpIsLoading) return;
-        dispatch(authActions.signUp());
+        dispatch(authActions.register(results));
     }, [dispatch, signUpIsLoading])
 
-    return <>
-        <Formik initialValues={FormikInitialValues}
-                validationSchema={FormikValidationSchema}
-                onSubmit={handleSignUp}
+    return <Formik initialValues={FormikInitialValues}
+                   validationSchema={FormikValidationSchema}
+                   onSubmit={handleSignUp}
+    >
+        {({handleSubmit}) => <Stack
+            direction="column"
+            justifyContent="flex-start"
+            alignItems="center"
+            spacing="16px"
+            sx={signUpStyles.container}
         >
-            {({handleSubmit}) => <Stack
-                direction="column"
-                justifyContent="flex-start"
-                alignItems="center"
-                spacing="16px"
-                sx={signUpStyles.container}
-            >
-                <Typography variant="h3" gutterBottom>Create a new account</Typography>
-                <FormikInput name="email" label="E-mail address"/>
-                <FormikInput name="nick" label="Nick"/>
-                <FormikInput name="password" label="Password" type="password"/>
-                <FormikInput name="passwordRepeat" label="Repeat the password" type="password"/>
-                <Button text="Sign up" type="submit" onClick={() => handleSubmit()} isDisabled={signUpIsLoading}
-                        title={signUpIsLoading ? 'Waiting for the response from server' : undefined}/>
-            </Stack>}
-        </Formik>
-    </>
+            <Typography variant="h3" gutterBottom>Create a new account</Typography>
+            <FormikInput name="email" label="E-mail address"/>
+            <FormikInput name="nick" label="Nick"/>
+            <FormikInput name="password" label="Password" type="password"/>
+            <FormikInput name="passwordRepeat" label="Repeat the password" type="password"/>
+            <Button text="Sign up" type="submit" onClick={() => handleSubmit()} isDisabled={signUpIsLoading}
+                    title={signUpIsLoading ? 'Waiting for the response from server' : undefined}/>
+        </Stack>}
+    </Formik>
 }
