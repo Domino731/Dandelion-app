@@ -5,4 +5,13 @@ export type AuthSliceState = {
     registerStatus: ActionTypeUnion;
     registerError: string | null;
     loginStatus: ActionTypeUnion;
+    loginError: string | null;
+    user: User | null;
+}
+
+export type User = {
+    email: string;
+    password: string;
+    refreshToken: string;
+    accessToken: string;
 }
