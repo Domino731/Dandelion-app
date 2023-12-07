@@ -9,5 +9,6 @@ const registerStatus = createSelector(root, (state) => state.registerStatus);
 const registerError = createSelector(root, (state) => state.registerError);
 const loginStatus = createSelector(root, (state) => state.loginStatus);
 const loginError = createSelector(root, (state) => state.loginError);
+const user = createSelector(root, (state) => state.user);
 
-export const authSelectors = {isLogged, registerStatus, loginStatus, registerError, loginError};
+export const authSelectors = {isLogged, registerStatus, loginStatus, registerError, loginError, user};

@@ -23,6 +23,7 @@ export const SignIn = () => {
 
     const loginStatus = useSelector(authSelectors.loginStatus);
     const loginError = useSelector(authSelectors.loginError);
+    const user = useSelector(authSelectors.user);
 
     const isLoading = useMemo(() => loginStatus === ACTION_STATUS.PENDING, [loginStatus]);
 
@@ -32,12 +33,12 @@ export const SignIn = () => {
     }, [dispatch, isLoading])
 
     useEffect(() => {
-        if (loginStatus === ACTION_STATUS.SUCCESS) {
+        if (user) {
             dispatch(authSliceActions.setRegisterError(null));
             dispatch(authSliceActions.setRegisterStatus(ACTION_STATUS.IDLE));
             navigate(ROUTES.dashboard);
         }
-    }, [dispatch, navigate, loginStatus])
+    }, [dispatch, navigate, loginStatus, user])
 
     return <Formik initialValues={FormikInitialValues}
                    validationSchema={FormikValidationSchema}
