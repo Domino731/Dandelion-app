@@ -8,6 +8,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {Dashboard} from "../Dashboard";
 import {SignIn} from "../auth/SignIn/SignIn.tsx";
 import {authSelectors} from "../auth/store/selectors.ts";
+import {ServersColumn} from "../servers/ServersColumn.tsx";
 
 const router = createBrowserRouter([
     {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
 const p = createBrowserRouter([
     {
         path: '/',
-        element: <div>test</div>
+        element: <ServersColumn/>
     }
 ])
 
@@ -41,10 +42,10 @@ const UnprotectedRoutes = () => {
 
 
 const Router = () => {
-    const user = useSelector(authSelectors.user);
-    if (user) {
-        return <ProtectedRoutes/>
-    }
+    // const user = useSelector(authSelectors.user);
+    // if (user) {
+    //     return <ProtectedRoutes/>
+    // }
     return <UnprotectedRoutes/>
 }
 
