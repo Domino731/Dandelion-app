@@ -6,3 +6,4 @@ export enum ACTION_STATUS {
 }
 
 export type ActionTypeUnion = keyof typeof ACTION_STATUS;
+export type StateError = null | string;
