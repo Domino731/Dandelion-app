@@ -4,7 +4,7 @@ import {authServices} from "./services/api.ts";
 import {LoginDto, RegisterDto} from "./services/api.types.ts";
 import {ACTION_STATUS} from "../../../redux/constants.ts";
 import {API_ERROR} from "../../../api.const.ts";
-import {authApi, setAuthApiToken} from "../../../api/api.ts";
+import {setAuthApiToken} from "../../../api/api.ts";
 
 const register = (data: RegisterDto) => async (dispatch: AppDispatch) => {
     dispatch(authSliceActions.setRegisterStatus(ACTION_STATUS.PENDING));
