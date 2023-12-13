@@ -24,7 +24,7 @@ const initialState: FriendsState = {
 
 export const FRIENDS_REDUCER_NAME = 'friends';
 
-const authSlice = createSlice({
+const friendsSlice = createSlice({
     initialState,
     name: FRIENDS_REDUCER_NAME,
     reducers: {
@@ -74,3 +74,5 @@ const authSlice = createSlice({
     }
 });
 
+export const friendsSliceActions = friendsSlice.actions;
+export const friendsReducer = friendsSlice.reducer;

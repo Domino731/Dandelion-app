@@ -2,12 +2,14 @@
 import {configureStore} from '@reduxjs/toolkit';
 import {AUTH_SLICE_NAME, authReducer} from "../modules/auth/store/slice.ts";
 import {useDispatch} from "react-redux";
+import {FRIENDS_REDUCER_NAME, friendsReducer} from "../modules/friends/store/slice.ts";
 // Import your reducers here
 // import counterReducer from './counterReducer';
 
 const store = configureStore({
     reducer: {
-        [AUTH_SLICE_NAME]: authReducer
+        [AUTH_SLICE_NAME]: authReducer,
+        [FRIENDS_REDUCER_NAME]: friendsReducer
     },
 });
 
