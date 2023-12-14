@@ -7,4 +7,5 @@ export type ButtonProps = {
     onClick: MouseEventHandler<HTMLButtonElement>;
     isDisabled?: boolean;
     title?: string;
+    variant?: 'text' | 'outlined' | 'contained'
 }
