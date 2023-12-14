@@ -31,10 +31,14 @@ const replyToInvitation = () => async (dispatch: AppDispatch) => {
 
 }
 
+const removeFriend = (friendProfileId: number) => async (dispatch: AppDispatch) => {
+
+}
 export const friendsActions = {
     fetchFriends,
     fetchInvitationsAsSender,
     fetchInvitationsAsReceiver,
     sendInvitation,
-    replyToInvitation
+    replyToInvitation,
+    removeFriend
 }
