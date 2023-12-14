@@ -10,7 +10,5 @@ export type LoginDto = {
 }
 export type LoginResponse = {
     email: string;
-    password: string;
-    refreshToken: string;
-    accessToken: string;
+    access_token: string;
 }

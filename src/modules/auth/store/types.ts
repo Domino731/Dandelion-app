@@ -11,7 +11,5 @@ export type AuthSliceState = {
 
 export type User = {
     email: string;
-    password: string;
-    refreshToken: string;
     accessToken: string;
 }

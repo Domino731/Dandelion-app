@@ -4,7 +4,7 @@ import {createSelector} from "@reduxjs/toolkit";
 
 const root = (state: RootState) => state[AUTH_SLICE_NAME];
 
-const isLogged = createSelector(root, (state) => state.isLogged);
+const isLogged = createSelector(root, (state) => Boolean(state.user));
 const registerStatus = createSelector(root, (state) => state.registerStatus);
 const registerError = createSelector(root, (state) => state.registerError);
 const loginStatus = createSelector(root, (state) => state.loginStatus);

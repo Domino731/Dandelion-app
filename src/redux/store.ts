@@ -1,16 +1,16 @@
-// store/store.ts
 import {configureStore} from '@reduxjs/toolkit';
 import {AUTH_SLICE_NAME, authReducer} from "../modules/auth/store/slice.ts";
 import {useDispatch} from "react-redux";
 import {FRIENDS_REDUCER_NAME, friendsReducer} from "../modules/friends/store/slice.ts";
-// Import your reducers here
-// import counterReducer from './counterReducer';
+import logger from 'redux-logger'
 
 const store = configureStore({
     reducer: {
         [AUTH_SLICE_NAME]: authReducer,
         [FRIENDS_REDUCER_NAME]: friendsReducer
     },
+    // TODO: remove logger on dev environment
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
 });
 
 export type RootState = ReturnType<typeof store.getState>;
