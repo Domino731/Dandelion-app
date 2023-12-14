@@ -1,11 +1,8 @@
-import {Link} from "react-router-dom";
-import {authApi} from "../../api/api.ts";
+import {FriendsColumn} from "../friends/FriendsColumn";
 
 // TODO make this route protected
 export const Dashboard = () => {
-    return <div>
-        <Link to="/register">register</Link><br/>
-        <Link to="/login">login</Link>
-        <button onClick={() => authApi.get('/user')}>test</button>
+    return <div style={{width: '100%', height: '100%'}}>
+        <FriendsColumn/>
     </div>
 }

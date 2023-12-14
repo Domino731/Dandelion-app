@@ -1,4 +1,4 @@
 export const FormikInitialValues = {
-	password: "qwertyqwerty123@/AA",
-	email: "janusz22A2@gmail.com"
+    email: "json@gmail.com",
+    password: "1209381902831assosjkdasdjAiasssosdi123@!@//"
 }

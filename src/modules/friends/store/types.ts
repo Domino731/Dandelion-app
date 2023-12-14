@@ -1,7 +1,7 @@
 import {ActionTypeUnion, StateError} from "../../../redux/constants.ts";
 
 export type FriendsState = {
-    friends: null;
+    friends: null | Friend[];
     friendsStatus: ActionTypeUnion;
     friendsError: StateError;
 
@@ -18,4 +18,10 @@ export type FriendsState = {
 
     replyToInvitationStatus: ActionTypeUnion,
     replyToInvitationError: StateError,
+}
+
+export type Friend = {
+    nick: string;
+    id: number;
+    friendProfileId: number;
 }
