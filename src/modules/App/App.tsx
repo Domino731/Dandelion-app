@@ -10,6 +10,7 @@ import {SignIn} from "../auth/SignIn";
 import {ROUTES} from "./App.const.ts";
 import {PrivateRoute} from "../Router/PrivateRoute";
 import {AuthOptions} from "../auth/AuthOptions";
+import {io} from "socket.io-client";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
 ])
 
 function App() {
+    // TODO: remove
     return (
         <Provider store={store}>
             <ThemeProvider theme={Theme}>

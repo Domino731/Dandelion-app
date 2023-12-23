@@ -7,10 +7,29 @@ import {FriendsOnline} from "./Sections/FriendsOnline";
 import {FriendsAll} from "./Sections/FriendsAll";
 import {FriendsPending} from "./Sections/FriendsPending";
 import {FriendsBlocked} from "./Sections/FriendsBlocked";
+import {io} from "socket.io-client";
+import {useSelector} from "react-redux";
+import {authSelectors} from "../../auth/store/selectors.ts";
 
 export const FriendsColumn = () => {
-    const [sectionIndex, setSectionIndex] = useState<number>(1);
+    const {accessToken} = useSelector(authSelectors.user) ?? {}
 
+    const [sectionIndex, setSectionIndex] = useState<number>(1);
+    const socket = io('http://localhost:3000/', {
+        transportOptions: {
+            polling: {
+                extraHeaders: {
+                    'authorization': `Bearer ${accessToken}`,
+                },
+            },
+        },
+    });
+
+    const handleTestMessage = () => {
+        socket.emit('message', {}, (data) => {
+            console.log(data);
+        });
+    }
 
     const Section = useMemo(() => {
         switch (sectionIndex) {
@@ -29,6 +48,7 @@ export const FriendsColumn = () => {
 
     return <>
         <Box sx={friendsSx.topBar}>
+            <button onClick={handleTestMessage}>test</button>
             <Box sx={friendsSx.friendsTitleWrapper}>
                 <PeopleIcon/>
                 <Typography sx={friendsSx.friendsTitle}>Friends</Typography>
